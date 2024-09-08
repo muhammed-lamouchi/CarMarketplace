@@ -76,8 +76,11 @@ WSGI_APPLICATION = 'voiture.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'car_db',
+        'USER':'postgres',
+        'PASSWORD':'cyberops',
+        'HOST':'localhost',
     }
 }
 
@@ -121,6 +124,10 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
     BASE_DIR / 'voiture/static',
 ]
+
+#media settings
+MEDIA_ROOTS = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
